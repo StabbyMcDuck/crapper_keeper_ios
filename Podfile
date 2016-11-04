@@ -6,5 +6,10 @@ target 'crapper_keeper_ios' do
   use_frameworks!
 
   # Pods for crapper_keeper_ios
-
+  
+  # added from facebook dev swift sdk tutorial
+  use_frameworks!
+ 
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
 end
