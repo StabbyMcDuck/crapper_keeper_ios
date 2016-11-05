@@ -24,7 +24,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = UITableViewCell()
 
         let container = self.containers[indexPath.row]
+        
         cell.textLabel!.text = container.name
+        cell.imageView!.image = UIImage(data: container.image as! Data)
+        
         return cell
     }
 
@@ -61,6 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let container = NSEntityDescription.insertNewObject(forEntityName: "Container", into: context) as! Container
         
         container.name = "My apartment"
+        container.image = UIImageJPEGRepresentation(UIImage(named: "tools.jpeg")!, 1) as NSData?
         
         do {
             try context.save()
@@ -76,6 +80,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     */
  
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "tableViewToItemDetailSegue", sender: self)
+    }
 }
 

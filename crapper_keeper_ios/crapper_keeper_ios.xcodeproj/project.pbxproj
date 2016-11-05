@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831FB5511DCE306800EFCAAC /* tools.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 831FB5501DCE306800EFCAAC /* tools.jpeg */; };
+		831FB5531DCE39A400EFCAAC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */; };
 		83CAE1041DCD297100A3205E /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CAE1021DCD297100A3205E /* Container.swift */; };
 		83CAE1051DCD297100A3205E /* Container+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */; };
 		83E6B56B1DCD1190006A3A26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6B56A1DCD1190006A3A26 /* AppDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		831FB5501DCE306800EFCAAC /* tools.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tools.jpeg; path = ../../../../../Downloads/tools.jpeg; sourceTree = "<group>"; };
+		831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		83CAE1021DCD297100A3205E /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		83E6B5671DCD1190006A3A26 /* crapper_keeper_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crapper_keeper_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +66,7 @@
 			children = (
 				83E6B56A1DCD1190006A3A26 /* AppDelegate.swift */,
 				83E6B56C1DCD1190006A3A26 /* ViewController.swift */,
+				831FB5501DCE306800EFCAAC /* tools.jpeg */,
 				83CAE1021DCD297100A3205E /* Container.swift */,
 				83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */,
 				83E6B56E1DCD1190006A3A26 /* Main.storyboard */,
@@ -69,6 +74,7 @@
 				83E6B5761DCD1190006A3A26 /* LaunchScreen.storyboard */,
 				83E6B5791DCD1190006A3A26 /* Info.plist */,
 				83E6B5711DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld */,
+				831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */,
 			);
 			path = crapper_keeper_ios;
 			sourceTree = "<group>";
@@ -135,6 +141,7 @@
 				83E6B5781DCD1190006A3A26 /* LaunchScreen.storyboard in Resources */,
 				83E6B5751DCD1190006A3A26 /* Assets.xcassets in Resources */,
 				83E6B5701DCD1190006A3A26 /* Main.storyboard in Resources */,
+				831FB5511DCE306800EFCAAC /* tools.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +154,7 @@
 			files = (
 				83CAE1051DCD297100A3205E /* Container+CoreDataProperties.swift in Sources */,
 				83E6B5731DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld in Sources */,
+				831FB5531DCE39A400EFCAAC /* ItemDetailViewController.swift in Sources */,
 				83E6B56D1DCD1190006A3A26 /* ViewController.swift in Sources */,
 				83E6B56B1DCD1190006A3A26 /* AppDelegate.swift in Sources */,
 				83CAE1041DCD297100A3205E /* Container.swift in Sources */,
