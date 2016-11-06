@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Container" representedClassName=".Container" syncable="YES">
+        <attribute name="containerDescription" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="hyper.isPrimaryKey" value="true"/>
+            </userInfo>
+        </attribute>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Container" positionX="-63" positionY="-18" width="128" height="135"/>
+    </elements>
+</model>

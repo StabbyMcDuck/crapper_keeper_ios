@@ -1,6 +1,0 @@
-framework module Pods_crapper_keeper_ios {
-  umbrella header "Pods-crapper_keeper_ios-umbrella.h"
-
-  export *
-  module * { export * }
-}

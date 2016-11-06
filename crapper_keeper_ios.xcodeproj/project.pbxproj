@@ -7,79 +7,127 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83C10DAD1DCCEF44008AC83F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C10DAC1DCCEF44008AC83F /* AppDelegate.swift */; };
-		83C10DAF1DCCEF44008AC83F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C10DAE1DCCEF44008AC83F /* RootViewController.swift */; };
-		83C10DB11DCCEF44008AC83F /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C10DB01DCCEF44008AC83F /* DataViewController.swift */; };
-		83C10DB31DCCEF44008AC83F /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C10DB21DCCEF44008AC83F /* ModelController.swift */; };
-		83C10DB61DCCEF44008AC83F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C10DB41DCCEF44008AC83F /* Main.storyboard */; };
-		83C10DB81DCCEF44008AC83F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83C10DB71DCCEF44008AC83F /* Assets.xcassets */; };
-		83C10DBB1DCCEF44008AC83F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C10DB91DCCEF44008AC83F /* LaunchScreen.storyboard */; };
+		831FB5531DCE39A400EFCAAC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */; };
+		837FD4261DCE899800D8B569 /* ContainerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FD4251DCE899800D8B569 /* ContainerDetailViewController.swift */; };
+		837FD4281DCE8E4100D8B569 /* ContainerTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FD4271DCE8E4100D8B569 /* ContainerTabBarController.swift */; };
+		83B9A18D1DCEB0F900E93B85 /* NewContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B9A18C1DCEB0F900E93B85 /* NewContainerViewController.swift */; };
+		83C36CDD1DCFA3180085B2FD /* tools.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 83C36CDC1DCFA3180085B2FD /* tools.jpeg */; };
+		83C36CE31DCFD1AD0085B2FD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C36CE21DCFD1AD0085B2FD /* Networking.swift */; };
+		83CAE1041DCD297100A3205E /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CAE1021DCD297100A3205E /* Container.swift */; };
+		83CAE1051DCD297100A3205E /* Container+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */; };
+		83E6B56B1DCD1190006A3A26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6B56A1DCD1190006A3A26 /* AppDelegate.swift */; };
+		83E6B56D1DCD1190006A3A26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6B56C1DCD1190006A3A26 /* ViewController.swift */; };
+		83E6B5701DCD1190006A3A26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E6B56E1DCD1190006A3A26 /* Main.storyboard */; };
+		83E6B5731DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83E6B5711DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld */; };
+		83E6B5751DCD1190006A3A26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E6B5741DCD1190006A3A26 /* Assets.xcassets */; };
+		83E6B5781DCD1190006A3A26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E6B5761DCD1190006A3A26 /* LaunchScreen.storyboard */; };
+		9579F44F7AF7245217CD6D9D /* Pods_crapper_keeper_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD5BDAA8F5325DD9E66C4E1 /* Pods_crapper_keeper_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		83C10DA91DCCEF44008AC83F /* crapper_keeper_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crapper_keeper_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		83C10DAC1DCCEF44008AC83F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		83C10DAE1DCCEF44008AC83F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		83C10DB01DCCEF44008AC83F /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		83C10DB21DCCEF44008AC83F /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		83C10DB51DCCEF44008AC83F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		83C10DB71DCCEF44008AC83F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		83C10DBA1DCCEF44008AC83F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		83C10DBC1DCCEF44008AC83F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		232E9EE9C204C9C110500849 /* Pods-crapper_keeper_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crapper_keeper_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-crapper_keeper_ios/Pods-crapper_keeper_ios.release.xcconfig"; sourceTree = "<group>"; };
+		3AD5BDAA8F5325DD9E66C4E1 /* Pods_crapper_keeper_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crapper_keeper_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4415B433DEB942ED567BD9E0 /* Pods-crapper_keeper_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crapper_keeper_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-crapper_keeper_ios/Pods-crapper_keeper_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		837FD4251DCE899800D8B569 /* ContainerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerDetailViewController.swift; sourceTree = "<group>"; };
+		837FD4271DCE8E4100D8B569 /* ContainerTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTabBarController.swift; sourceTree = "<group>"; };
+		83B9A18C1DCEB0F900E93B85 /* NewContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContainerViewController.swift; sourceTree = "<group>"; };
+		83C36CDC1DCFA3180085B2FD /* tools.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tools.jpeg; path = ../../../../Downloads/tools.jpeg; sourceTree = "<group>"; };
+		83C36CE21DCFD1AD0085B2FD /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		83CAE1021DCD297100A3205E /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		83E6B5671DCD1190006A3A26 /* crapper_keeper_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crapper_keeper_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83E6B56A1DCD1190006A3A26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83E6B56C1DCD1190006A3A26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83E6B56F1DCD1190006A3A26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83E6B5721DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = crapper_keeper_ios.xcdatamodel; sourceTree = "<group>"; };
+		83E6B5741DCD1190006A3A26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		83E6B5771DCD1190006A3A26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83E6B5791DCD1190006A3A26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		83C10DA61DCCEF44008AC83F /* Frameworks */ = {
+		83E6B5641DCD1190006A3A26 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9579F44F7AF7245217CD6D9D /* Pods_crapper_keeper_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		83C10DA01DCCEF43008AC83F = {
+		83E6B55E1DCD1190006A3A26 = {
 			isa = PBXGroup;
 			children = (
-				83C10DAB1DCCEF44008AC83F /* crapper_keeper_ios */,
-				83C10DAA1DCCEF44008AC83F /* Products */,
+				83E6B5691DCD1190006A3A26 /* crapper_keeper_ios */,
+				83E6B5681DCD1190006A3A26 /* Products */,
+				FD44AC0CC9643556FD403CB4 /* Pods */,
+				C499642C29C4D45B72C704F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		83C10DAA1DCCEF44008AC83F /* Products */ = {
+		83E6B5681DCD1190006A3A26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83C10DA91DCCEF44008AC83F /* crapper_keeper_ios.app */,
+				83E6B5671DCD1190006A3A26 /* crapper_keeper_ios.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		83C10DAB1DCCEF44008AC83F /* crapper_keeper_ios */ = {
+		83E6B5691DCD1190006A3A26 /* crapper_keeper_ios */ = {
 			isa = PBXGroup;
 			children = (
-				83C10DAC1DCCEF44008AC83F /* AppDelegate.swift */,
-				83C10DAE1DCCEF44008AC83F /* RootViewController.swift */,
-				83C10DB01DCCEF44008AC83F /* DataViewController.swift */,
-				83C10DB21DCCEF44008AC83F /* ModelController.swift */,
-				83C10DB41DCCEF44008AC83F /* Main.storyboard */,
-				83C10DB71DCCEF44008AC83F /* Assets.xcassets */,
-				83C10DB91DCCEF44008AC83F /* LaunchScreen.storyboard */,
-				83C10DBC1DCCEF44008AC83F /* Info.plist */,
+				83C36CDC1DCFA3180085B2FD /* tools.jpeg */,
+				83E6B56A1DCD1190006A3A26 /* AppDelegate.swift */,
+				83E6B56C1DCD1190006A3A26 /* ViewController.swift */,
+				83CAE1021DCD297100A3205E /* Container.swift */,
+				83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */,
+				83E6B56E1DCD1190006A3A26 /* Main.storyboard */,
+				83E6B5741DCD1190006A3A26 /* Assets.xcassets */,
+				83E6B5761DCD1190006A3A26 /* LaunchScreen.storyboard */,
+				83E6B5791DCD1190006A3A26 /* Info.plist */,
+				83E6B5711DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld */,
+				831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */,
+				837FD4251DCE899800D8B569 /* ContainerDetailViewController.swift */,
+				837FD4271DCE8E4100D8B569 /* ContainerTabBarController.swift */,
+				83B9A18C1DCEB0F900E93B85 /* NewContainerViewController.swift */,
+				83C36CE21DCFD1AD0085B2FD /* Networking.swift */,
 			);
 			path = crapper_keeper_ios;
+			sourceTree = "<group>";
+		};
+		C499642C29C4D45B72C704F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AD5BDAA8F5325DD9E66C4E1 /* Pods_crapper_keeper_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD44AC0CC9643556FD403CB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4415B433DEB942ED567BD9E0 /* Pods-crapper_keeper_ios.debug.xcconfig */,
+				232E9EE9C204C9C110500849 /* Pods-crapper_keeper_ios.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		83C10DA81DCCEF44008AC83F /* crapper_keeper_ios */ = {
+		83E6B5661DCD1190006A3A26 /* crapper_keeper_ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83C10DBF1DCCEF44008AC83F /* Build configuration list for PBXNativeTarget "crapper_keeper_ios" */;
+			buildConfigurationList = 83E6B57C1DCD1190006A3A26 /* Build configuration list for PBXNativeTarget "crapper_keeper_ios" */;
 			buildPhases = (
-				83C10DA51DCCEF44008AC83F /* Sources */,
-				83C10DA61DCCEF44008AC83F /* Frameworks */,
-				83C10DA71DCCEF44008AC83F /* Resources */,
+				2FFFC5F637AD73A5969DBD9F /* [CP] Check Pods Manifest.lock */,
+				83E6B5631DCD1190006A3A26 /* Sources */,
+				83E6B5641DCD1190006A3A26 /* Frameworks */,
+				83E6B5651DCD1190006A3A26 /* Resources */,
+				F2BFB8C0E56021F07E811C69 /* [CP] Embed Pods Frameworks */,
+				841DAC664EFF0EBB07137C00 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -87,26 +135,27 @@
 			);
 			name = crapper_keeper_ios;
 			productName = crapper_keeper_ios;
-			productReference = 83C10DA91DCCEF44008AC83F /* crapper_keeper_ios.app */;
+			productReference = 83E6B5671DCD1190006A3A26 /* crapper_keeper_ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		83C10DA11DCCEF43008AC83F /* Project object */ = {
+		83E6B55F1DCD1190006A3A26 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Regina Imhoff";
 				TargetAttributes = {
-					83C10DA81DCCEF44008AC83F = {
+					83E6B5661DCD1190006A3A26 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 84V2A2X743;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 83C10DA41DCCEF44008AC83F /* Build configuration list for PBXProject "crapper_keeper_ios" */;
+			buildConfigurationList = 83E6B5621DCD1190006A3A26 /* Build configuration list for PBXProject "crapper_keeper_ios" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -114,56 +163,111 @@
 				en,
 				Base,
 			);
-			mainGroup = 83C10DA01DCCEF43008AC83F;
-			productRefGroup = 83C10DAA1DCCEF44008AC83F /* Products */;
+			mainGroup = 83E6B55E1DCD1190006A3A26;
+			productRefGroup = 83E6B5681DCD1190006A3A26 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				83C10DA81DCCEF44008AC83F /* crapper_keeper_ios */,
+				83E6B5661DCD1190006A3A26 /* crapper_keeper_ios */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		83C10DA71DCCEF44008AC83F /* Resources */ = {
+		83E6B5651DCD1190006A3A26 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83C10DBB1DCCEF44008AC83F /* LaunchScreen.storyboard in Resources */,
-				83C10DB81DCCEF44008AC83F /* Assets.xcassets in Resources */,
-				83C10DB61DCCEF44008AC83F /* Main.storyboard in Resources */,
+				83E6B5781DCD1190006A3A26 /* LaunchScreen.storyboard in Resources */,
+				83E6B5751DCD1190006A3A26 /* Assets.xcassets in Resources */,
+				83E6B5701DCD1190006A3A26 /* Main.storyboard in Resources */,
+				83C36CDD1DCFA3180085B2FD /* tools.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FFFC5F637AD73A5969DBD9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		841DAC664EFF0EBB07137C00 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-crapper_keeper_ios/Pods-crapper_keeper_ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2BFB8C0E56021F07E811C69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-crapper_keeper_ios/Pods-crapper_keeper_ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		83C10DA51DCCEF44008AC83F /* Sources */ = {
+		83E6B5631DCD1190006A3A26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83C10DAF1DCCEF44008AC83F /* RootViewController.swift in Sources */,
-				83C10DB31DCCEF44008AC83F /* ModelController.swift in Sources */,
-				83C10DB11DCCEF44008AC83F /* DataViewController.swift in Sources */,
-				83C10DAD1DCCEF44008AC83F /* AppDelegate.swift in Sources */,
+				83B9A18D1DCEB0F900E93B85 /* NewContainerViewController.swift in Sources */,
+				83C36CE31DCFD1AD0085B2FD /* Networking.swift in Sources */,
+				83CAE1051DCD297100A3205E /* Container+CoreDataProperties.swift in Sources */,
+				83E6B5731DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld in Sources */,
+				831FB5531DCE39A400EFCAAC /* ItemDetailViewController.swift in Sources */,
+				837FD4281DCE8E4100D8B569 /* ContainerTabBarController.swift in Sources */,
+				83E6B56D1DCD1190006A3A26 /* ViewController.swift in Sources */,
+				83E6B56B1DCD1190006A3A26 /* AppDelegate.swift in Sources */,
+				837FD4261DCE899800D8B569 /* ContainerDetailViewController.swift in Sources */,
+				83CAE1041DCD297100A3205E /* Container.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		83C10DB41DCCEF44008AC83F /* Main.storyboard */ = {
+		83E6B56E1DCD1190006A3A26 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				83C10DB51DCCEF44008AC83F /* Base */,
+				83E6B56F1DCD1190006A3A26 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		83C10DB91DCCEF44008AC83F /* LaunchScreen.storyboard */ = {
+		83E6B5761DCD1190006A3A26 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				83C10DBA1DCCEF44008AC83F /* Base */,
+				83E6B5771DCD1190006A3A26 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -171,7 +275,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		83C10DBD1DCCEF44008AC83F /* Debug */ = {
+		83E6B57A1DCD1190006A3A26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -221,7 +325,7 @@
 			};
 			name = Debug;
 		};
-		83C10DBE1DCCEF44008AC83F /* Release */ = {
+		83E6B57B1DCD1190006A3A26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -264,10 +368,12 @@
 			};
 			name = Release;
 		};
-		83C10DC01DCCEF44008AC83F /* Debug */ = {
+		83E6B57D1DCD1190006A3A26 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4415B433DEB942ED567BD9E0 /* Pods-crapper_keeper_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84V2A2X743;
 				INFOPLIST_FILE = crapper_keeper_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.reginaimhoff.crapper-keeper-ios";
@@ -276,14 +382,17 @@
 			};
 			name = Debug;
 		};
-		83C10DC11DCCEF44008AC83F /* Release */ = {
+		83E6B57E1DCD1190006A3A26 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 232E9EE9C204C9C110500849 /* Pods-crapper_keeper_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84V2A2X743;
 				INFOPLIST_FILE = crapper_keeper_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.reginaimhoff.crapper-keeper-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -291,24 +400,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		83C10DA41DCCEF44008AC83F /* Build configuration list for PBXProject "crapper_keeper_ios" */ = {
+		83E6B5621DCD1190006A3A26 /* Build configuration list for PBXProject "crapper_keeper_ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				83C10DBD1DCCEF44008AC83F /* Debug */,
-				83C10DBE1DCCEF44008AC83F /* Release */,
+				83E6B57A1DCD1190006A3A26 /* Debug */,
+				83E6B57B1DCD1190006A3A26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83C10DBF1DCCEF44008AC83F /* Build configuration list for PBXNativeTarget "crapper_keeper_ios" */ = {
+		83E6B57C1DCD1190006A3A26 /* Build configuration list for PBXNativeTarget "crapper_keeper_ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				83C10DC01DCCEF44008AC83F /* Debug */,
-				83C10DC11DCCEF44008AC83F /* Release */,
+				83E6B57D1DCD1190006A3A26 /* Debug */,
+				83E6B57E1DCD1190006A3A26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		83E6B5711DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				83E6B5721DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodel */,
+			);
+			currentVersion = 83E6B5721DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodel */;
+			path = crapper_keeper_ios.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 83C10DA11DCCEF43008AC83F /* Project object */;
+	rootObject = 83E6B55F1DCD1190006A3A26 /* Project object */;
 }

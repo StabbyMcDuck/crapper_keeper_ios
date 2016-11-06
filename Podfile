@@ -10,6 +10,9 @@ target 'crapper_keeper_ios' do
   # added from facebook dev swift sdk tutorial
   use_frameworks!
  
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
+  # pod 'FacebookCore'
+  # pod 'FacebookLogin'
+
+  pod 'Alamofire', '~> 4.0'
+  pod 'Sync', '~> 2'
 end
