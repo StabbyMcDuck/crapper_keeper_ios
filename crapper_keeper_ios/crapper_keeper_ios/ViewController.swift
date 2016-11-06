@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
 
     var containers : [Container] = []
+    var selectedContainer : Container? = nil
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.containers.count
@@ -39,23 +40,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        makeSampleContainer()
-
+        //makeSampleContainer()
+   
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let request: NSFetchRequest<Container> = Container.fetchRequest()
         
         let results = try! context.fetch(request)
         /*var results : [AnyObject]?
+         
+         do {
+         results = try context.executeFetchRequest(request)
+         } catch _ {
+         results = nil
+         } */
         
-        do {
-           results = try context.executeFetchRequest(request)
-        } catch _ {
-            results = nil
-        } */
-    
         if (!results.isEmpty){
             self.containers = results
         }
+        
+        self.tableView.reloadData()
     }
 
     func makeSampleContainer() {
@@ -81,7 +87,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
  
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "tableViewToItemDetailSegue", sender: self)
+        self.selectedContainer = self.containers[indexPath.row]
+        self.performSegue(withIdentifier: "containersTableViewToContainerTabBarSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ContainerTabBarController {
+          let containerTabBarController = segue.destination as! ContainerTabBarController
+           containerTabBarController.container = self.selectedContainer
+        }
     }
 }
 

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		831FB5511DCE306800EFCAAC /* tools.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 831FB5501DCE306800EFCAAC /* tools.jpeg */; };
 		831FB5531DCE39A400EFCAAC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */; };
+		837FD4261DCE899800D8B569 /* ContainerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FD4251DCE899800D8B569 /* ContainerDetailViewController.swift */; };
+		837FD4281DCE8E4100D8B569 /* ContainerTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FD4271DCE8E4100D8B569 /* ContainerTabBarController.swift */; };
+		83B9A18D1DCEB0F900E93B85 /* NewContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B9A18C1DCEB0F900E93B85 /* NewContainerViewController.swift */; };
 		83CAE1041DCD297100A3205E /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CAE1021DCD297100A3205E /* Container.swift */; };
 		83CAE1051DCD297100A3205E /* Container+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */; };
 		83E6B56B1DCD1190006A3A26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6B56A1DCD1190006A3A26 /* AppDelegate.swift */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		831FB5501DCE306800EFCAAC /* tools.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tools.jpeg; path = ../../../../../Downloads/tools.jpeg; sourceTree = "<group>"; };
 		831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		837FD4251DCE899800D8B569 /* ContainerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerDetailViewController.swift; sourceTree = "<group>"; };
+		837FD4271DCE8E4100D8B569 /* ContainerTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTabBarController.swift; sourceTree = "<group>"; };
+		83B9A18C1DCEB0F900E93B85 /* NewContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContainerViewController.swift; sourceTree = "<group>"; };
 		83CAE1021DCD297100A3205E /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		83E6B5671DCD1190006A3A26 /* crapper_keeper_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crapper_keeper_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +81,9 @@
 				83E6B5791DCD1190006A3A26 /* Info.plist */,
 				83E6B5711DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld */,
 				831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */,
+				837FD4251DCE899800D8B569 /* ContainerDetailViewController.swift */,
+				837FD4271DCE8E4100D8B569 /* ContainerTabBarController.swift */,
+				83B9A18C1DCEB0F900E93B85 /* NewContainerViewController.swift */,
 			);
 			path = crapper_keeper_ios;
 			sourceTree = "<group>";
@@ -111,6 +120,7 @@
 				TargetAttributes = {
 					83E6B5661DCD1190006A3A26 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 84V2A2X743;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -152,11 +162,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B9A18D1DCEB0F900E93B85 /* NewContainerViewController.swift in Sources */,
 				83CAE1051DCD297100A3205E /* Container+CoreDataProperties.swift in Sources */,
 				83E6B5731DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld in Sources */,
 				831FB5531DCE39A400EFCAAC /* ItemDetailViewController.swift in Sources */,
+				837FD4281DCE8E4100D8B569 /* ContainerTabBarController.swift in Sources */,
 				83E6B56D1DCD1190006A3A26 /* ViewController.swift in Sources */,
 				83E6B56B1DCD1190006A3A26 /* AppDelegate.swift in Sources */,
+				837FD4261DCE899800D8B569 /* ContainerDetailViewController.swift in Sources */,
 				83CAE1041DCD297100A3205E /* Container.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84V2A2X743;
 				INFOPLIST_FILE = crapper_keeper_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.reginaimhoff.crapper-keeper-ios";
@@ -292,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84V2A2X743;
 				INFOPLIST_FILE = crapper_keeper_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.reginaimhoff.crapper-keeper-ios";

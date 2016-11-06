@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewContainerViewController: UIViewController {
+class NewContainerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var containerDescriptionTextField: UITextView!
     
@@ -20,12 +20,32 @@ class NewContainerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let imageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewContainerViewController.imageTapped))
+        
+        self.containerImageView.addGestureRecognizer(imageTapRecognizer)
     }
 
     @IBAction func cancelTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
+    func imageTapped() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let cameraViewController = UIImagePickerController()
+            cameraViewController.sourceType = UIImagePickerControllerSourceType.camera
+            cameraViewController.delegate = self
+            
+            self.present(cameraViewController, animated: true)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+         self.containerImageView.image = info[UIImagePickerControllerOriginalImage] as! UIImage?
+        
+        picker.dismiss(animated: true)
+    }
+ 
     @IBAction func saveTapped(_ sender: Any)    {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -33,7 +53,7 @@ class NewContainerViewController: UIViewController {
         
         container.name = containerNameTextField.text
         container.containerDescription = containerDescriptionTextField.text
-        container.image = UIImageJPEGRepresentation(UIImage(named: "tools.jpeg")!, 1) as NSData?
+        container.image = UIImagePNGRepresentation(self.containerImageView!.image!) as NSData?
         
         do {
             try context.save()
