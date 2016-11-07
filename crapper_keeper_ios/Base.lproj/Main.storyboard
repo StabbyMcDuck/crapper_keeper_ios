@@ -234,7 +234,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rvz-ip-17L">
-                                <rect key="frame" x="87" y="320" width="200" height="200"/>
+                                <rect key="frame" x="87" y="381" width="200" height="200"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="2ht-CA-qDs"/>
@@ -265,6 +265,15 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to take a picture:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjr-6b-lU9">
+                                <rect key="frame" x="102" y="340" width="171" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ngD-vm-qqD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -275,17 +284,20 @@
                             <constraint firstItem="HVH-hA-vuE" firstAttribute="leading" secondItem="7DW-Ca-G02" secondAttribute="leadingMargin" constant="20" id="BMP-F1-ZdQ"/>
                             <constraint firstItem="HVH-hA-vuE" firstAttribute="top" secondItem="kZ8-Ew-dif" secondAttribute="bottom" constant="40" id="BWN-vR-Dev"/>
                             <constraint firstItem="hj4-rl-Jri" firstAttribute="leading" secondItem="7DW-Ca-G02" secondAttribute="leading" id="KkM-Du-MGd"/>
+                            <constraint firstItem="hjr-6b-lU9" firstAttribute="top" secondItem="WQm-eX-1xM" secondAttribute="bottom" constant="40" id="L9A-Hq-V3p"/>
+                            <constraint firstItem="rvz-ip-17L" firstAttribute="top" secondItem="hjr-6b-lU9" secondAttribute="bottom" constant="20" id="MBN-0j-QD5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ABY-Ig-M79" secondAttribute="trailing" constant="20" id="Mk4-vp-io5"/>
                             <constraint firstItem="WQm-eX-1xM" firstAttribute="top" secondItem="ABY-Ig-M79" secondAttribute="bottom" constant="10" id="N2U-uF-15P"/>
                             <constraint firstItem="WQm-eX-1xM" firstAttribute="leading" secondItem="7DW-Ca-G02" secondAttribute="leadingMargin" constant="20" id="NqS-HH-ClM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WQm-eX-1xM" secondAttribute="trailing" constant="20" id="Pln-Rg-3D5"/>
                             <constraint firstItem="rvz-ip-17L" firstAttribute="centerX" secondItem="7DW-Ca-G02" secondAttribute="centerX" id="W1C-4j-5eM"/>
+                            <constraint firstItem="hjr-6b-lU9" firstAttribute="centerX" secondItem="7DW-Ca-G02" secondAttribute="centerX" id="dtE-em-UfC"/>
                             <constraint firstItem="SWF-s8-DxN" firstAttribute="top" secondItem="HVH-hA-vuE" secondAttribute="bottom" constant="10" id="fAl-HU-L1E"/>
-                            <constraint firstItem="rvz-ip-17L" firstAttribute="top" secondItem="WQm-eX-1xM" secondAttribute="bottom" constant="20" id="gn5-iX-6rD"/>
                             <constraint firstItem="SWF-s8-DxN" firstAttribute="leading" secondItem="7DW-Ca-G02" secondAttribute="leadingMargin" constant="20" id="kNE-Oh-j9Q"/>
                             <constraint firstItem="hj4-rl-Jri" firstAttribute="top" secondItem="7DW-Ca-G02" secondAttribute="top" id="mOO-PY-cOq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HVH-hA-vuE" secondAttribute="trailing" constant="20" id="r63-h9-ZHe"/>
                             <constraint firstItem="ABY-Ig-M79" firstAttribute="top" secondItem="SWF-s8-DxN" secondAttribute="bottom" constant="20" id="uD7-X2-E2h"/>
+                            <constraint firstItem="rvz-ip-17L" firstAttribute="centerX" secondItem="7DW-Ca-G02" secondAttribute="centerX" id="yRx-cy-786"/>
                         </constraints>
                     </view>
                     <connections>

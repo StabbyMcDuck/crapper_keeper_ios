@@ -21,7 +21,7 @@ class Networking: NSObject {
     }
     
     private func fetch(credentials: Credentials, inEntityNamed: String, url: String, _ completion: @escaping (NSError?) -> Void) {
-        print("Authentication: '\(credentials.user)' '\(credentials.password)'")
+        //print("Authentication: '\(credentials.user)' '\(credentials.password)'")
         Alamofire
             .request(url)
             .authenticate(user: credentials.user, password: credentials.password)
@@ -54,39 +54,36 @@ class Networking: NSObject {
     }
     
     func createContainer(_ container: Container, credentials: Credentials, _ completion: @escaping (NSError?) -> Void) {
-        let parameters: Parameters = [
-            "description": container.containerDescription ?? "",
-            "name": container.name!,
-            "user_id": container.userId!
-        ]
-        
-        Alamofire
-            .request(containersURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-            .authenticate(user: credentials.user, password: credentials.password)
-            .responseData { response in
-                let statusCode = response.response?.statusCode
-                
-                if statusCode == 201 {
-                    let jsonResult = Request.serializeResponseJSON(options: JSONSerialization.ReadingOptions.allowFragments, response: response.response, data: response.data, error: nil)
-                    
-                    switch jsonResult {
-                        
-                    case .success(let json):
-                        let change = json as! [String: Any]
-                        
-                        Sync.changes([change], inEntityNamed: "Container", dataStack: self.dataStack, operations: [.Insert]) { error in
-                            completion(error)
-                        }
-                    case .failure(let error):
-                        print(error)
-                        
-                        
-                    }
-                } else if statusCode == 401 {
-                    print("Authentication error")
-                } else {
-                    print("Error (HTTP Status Code \(statusCode)")
+        Alamofire.upload(
+            multipartFormData: { (multipartFormData) in
+                multipartFormData.append((container.containerDescription ?? "").data(using: .utf8)!, withName: "container[description]")
+                multipartFormData.append(container.name!.data(using: .utf8)!, withName: "container[name]")
+                multipartFormData.append((container.userId?.data(using: .utf8))!, withName: "container[user_id]")
+             
+                if let image = container.image {
+                    multipartFormData.append(image as Data, withName: "container[image]", fileName: "image.png", mimeType: "image/png")
                 }
+            },
+            to: containersURL
+        ){ encodingResult in
+            switch encodingResult {
+            case .success( let upload, _, _):
+                upload.responseJSON { response in
+                    switch response.result {
+                        case .success(let json):
+                            let change = json as! [String: Any]
+                        
+                            Sync.changes([change], inEntityNamed: "Container", dataStack: self.dataStack, operations: [.Insert]) { error in
+                                completion(error)
+                        }
+                        
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+            case .failure(let error):
+                print("Encoding error: \(error)")
+            }
         }
     }
     

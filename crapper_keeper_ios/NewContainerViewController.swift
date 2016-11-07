@@ -67,7 +67,7 @@ class NewContainerViewController: UIViewController, UIImagePickerControllerDeleg
             if error != nil {
                 print("Error saving credential: \(error)")
             } else {
-                print("Credentials Saved")
+               //print("Credentials Saved")
 
                 self.dismiss(animated: true, completion: nil)
             }

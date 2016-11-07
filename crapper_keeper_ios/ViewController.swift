@@ -28,9 +28,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         self.containers = try! dataStack!.mainContext.fetch(request)
         
-        for container in containers {
+       /* for container in containers {
             print("Container (id: \(container.id), userId: \(container.userId), user: \(container.user))")
-        }
+        } */
         
         self.tableView.reloadData()
      }
@@ -57,7 +57,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func refresh() {
         if let credentials = Credentials.get() {
-            self.fetchCurrentObjects()
             self.fetchNewData(credentials: credentials)
         } else {
             self.performSegue(withIdentifier: "loginSegue", sender: self)
