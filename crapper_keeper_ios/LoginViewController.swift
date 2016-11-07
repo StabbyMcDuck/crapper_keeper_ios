@@ -16,12 +16,7 @@ class LoginViewController: UIViewController {
     var containersController: ViewController!
     
     @IBAction func login(_ sender: Any) {
-        let keychain = KeychainSwift()
-        keychain.set(uid.text!, forKey: "uid")
-        print("Saved uid: \(keychain.lastResultCode)")
-        
-        keychain.set(oauthToken.text!, forKey: "oauthToken")
-        print("Saved oauthToken: \(keychain.lastResultCode)")
+        Credentials.set(user: uid.text!, password: oauthToken.text!)
         
         self.dismiss(animated: true) {            
             self.containersController.refresh()

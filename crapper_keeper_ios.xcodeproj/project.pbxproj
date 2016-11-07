@@ -10,6 +10,7 @@
 		831DD7241DD00E7400C85403 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831DD7221DD00E7400C85403 /* User.swift */; };
 		831DD7251DD00E7400C85403 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831DD7231DD00E7400C85403 /* User+CoreDataProperties.swift */; };
 		831FB5531DCE39A400EFCAAC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */; };
+		833B768F1DD0403A0021C965 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B768E1DD0403A0021C965 /* Credentials.swift */; };
 		836C20D41DD01F59005AA634 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C20D11DD01F59005AA634 /* Identity.swift */; };
 		836C20D51DD01F5A005AA634 /* Identity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C20D21DD01F59005AA634 /* Identity+CoreDataProperties.swift */; };
 		836C20D81DD02775005AA634 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C20D71DD02775005AA634 /* LoginViewController.swift */; };
@@ -37,6 +38,7 @@
 		831DD7231DD00E7400C85403 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		833B768D1DD03C4D0021C965 /* crapper_keeper_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = crapper_keeper_ios.entitlements; sourceTree = "<group>"; };
+		833B768E1DD0403A0021C965 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		836C20D11DD01F59005AA634 /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		836C20D21DD01F59005AA634 /* Identity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Identity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		836C20D71DD02775005AA634 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				831DD7231DD00E7400C85403 /* User+CoreDataProperties.swift */,
 				83E6B56C1DCD1190006A3A26 /* ViewController.swift */,
 				836C20D71DD02775005AA634 /* LoginViewController.swift */,
+				833B768E1DD0403A0021C965 /* Credentials.swift */,
 			);
 			path = crapper_keeper_ios;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				837FD4281DCE8E4100D8B569 /* ContainerTabBarController.swift in Sources */,
 				836C20D51DD01F5A005AA634 /* Identity+CoreDataProperties.swift in Sources */,
 				83E6B56D1DCD1190006A3A26 /* ViewController.swift in Sources */,
+				833B768F1DD0403A0021C965 /* Credentials.swift in Sources */,
 				836C20D41DD01F59005AA634 /* Identity.swift in Sources */,
 				83E6B56B1DCD1190006A3A26 /* AppDelegate.swift in Sources */,
 				831DD7241DD00E7400C85403 /* User.swift in Sources */,

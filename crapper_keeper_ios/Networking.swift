@@ -20,9 +20,9 @@ class Networking: NSObject {
         self.dataStack = dataStack
     }
     
-    private func fetch(inEntityNamed: String, url: String, user: String, password: String, _ completion: @escaping (NSError?) -> Void) {
+    private func fetch(credentials: Credentials, inEntityNamed: String, url: String, _ completion: @escaping (NSError?) -> Void) {
         Alamofire.request(url)
-            .authenticate(user: user, password: password)
+            .authenticate(user: credentials.user, password: credentials.password)
             .responseData { response in
                 let statusCode = response.response?.statusCode
                 
@@ -51,11 +51,11 @@ class Networking: NSObject {
         }
     }
     
-    func fetchContainers(user: String, password: String, _ completion: @escaping (NSError?) -> Void) {
-        fetch(inEntityNamed: "Container", url: containersURL, user: user, password: password, completion)
+    func fetchContainers(credentials: Credentials, _ completion: @escaping (NSError?) -> Void) {
+        fetch(credentials: credentials, inEntityNamed: "Container", url: containersURL, completion)
     }
     
-    func fetchUsers(user: String, password: String, _ completion: @escaping (NSError?) -> Void) {
-        fetch(inEntityNamed: "User", url: usersURL, user: user, password: password, completion)
+    func fetchUsers(credentials: Credentials, _ completion: @escaping (NSError?) -> Void) {
+        fetch(credentials: credentials, inEntityNamed: "User", url: usersURL, completion)
     }
 }

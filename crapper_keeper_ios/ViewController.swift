@@ -34,17 +34,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.reloadData()
      }
     
-    func fetchNewData(user: String, password: String) {
-        self.networking.fetchUsers(user: user, password: password) { _ in
+    func fetchNewData(credentials: Credentials) {
+        self.networking.fetchUsers(credentials: credentials) { _ in
             let request: NSFetchRequest<User> = User.fetchRequest()
             request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-            let users = try! self.dataStack!.mainContext.fetch(request)
             
-            for user in users {
-              print("User (id: \(user.id), name: \(user.name))")
-            }
-            
-            self.networking.fetchContainers(user: user, password: password) { _ in
+            self.networking.fetchContainers(credentials: credentials) { _ in
                 self.fetchCurrentObjects()
                 self.refreshControl?.endRefreshing()
             }
@@ -53,20 +48,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func refresh() {
-        print("Refreshing")
-        let keychain = KeychainSwift()
-        let uid: String? = keychain.get("uid")
-        let oauthToken: String? = keychain.get("oauthToken")
-        
-        print("uid = \(uid)")
-        print("oauthToken = \(oauthToken)")
-        
-        if (uid != nil && oauthToken != nil) {
-            self.refreshControl = UIRefreshControl()
-            self.refreshControl?.addTarget(self, action: #selector(ViewController.fetchNewData), for: .valueChanged)
-            
+        if let credentials = Credentials.get() {
             self.fetchCurrentObjects()
-            self.fetchNewData(user: uid!, password: oauthToken!)
+            self.fetchNewData(credentials: credentials)
         } else {
             self.performSegue(withIdentifier: "loginSegue", sender: self)
         }
@@ -133,6 +117,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
           let containerTabBarController = segue.destination as! ContainerTabBarController
            containerTabBarController.container = self.selectedContainer
         } else if (segue.destination is LoginViewController) {
+            if segue.identifier == "logoutSegue" {
+                Credentials.delete()
+                
+                try! dataStack!.drop()
+                
+                self.containers = []
+            }
+            
             let loginViewController = segue.destination as! LoginViewController
             loginViewController.containersController = self
         }
