@@ -83,23 +83,23 @@
 		83E6B5691DCD1190006A3A26 /* crapper_keeper_ios */ = {
 			isa = PBXGroup;
 			children = (
-				831DD7221DD00E7400C85403 /* User.swift */,
-				831DD7231DD00E7400C85403 /* User+CoreDataProperties.swift */,
-				83C36CDC1DCFA3180085B2FD /* tools.jpeg */,
 				83E6B56A1DCD1190006A3A26 /* AppDelegate.swift */,
-				83E6B56C1DCD1190006A3A26 /* ViewController.swift */,
+				83E6B5741DCD1190006A3A26 /* Assets.xcassets */,
 				83CAE1021DCD297100A3205E /* Container.swift */,
 				83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */,
-				83E6B56E1DCD1190006A3A26 /* Main.storyboard */,
-				83E6B5741DCD1190006A3A26 /* Assets.xcassets */,
-				83E6B5761DCD1190006A3A26 /* LaunchScreen.storyboard */,
-				83E6B5791DCD1190006A3A26 /* Info.plist */,
-				83E6B5711DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld */,
-				831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */,
 				837FD4251DCE899800D8B569 /* ContainerDetailViewController.swift */,
 				837FD4271DCE8E4100D8B569 /* ContainerTabBarController.swift */,
-				83B9A18C1DCEB0F900E93B85 /* NewContainerViewController.swift */,
+				83E6B5711DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld */,
+				83E6B5791DCD1190006A3A26 /* Info.plist */,
+				831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */,
+				83E6B5761DCD1190006A3A26 /* LaunchScreen.storyboard */,
+				83E6B56E1DCD1190006A3A26 /* Main.storyboard */,
 				83C36CE21DCFD1AD0085B2FD /* Networking.swift */,
+				83B9A18C1DCEB0F900E93B85 /* NewContainerViewController.swift */,
+				83C36CDC1DCFA3180085B2FD /* tools.jpeg */,
+				831DD7221DD00E7400C85403 /* User.swift */,
+				831DD7231DD00E7400C85403 /* User+CoreDataProperties.swift */,
+				83E6B56C1DCD1190006A3A26 /* ViewController.swift */,
 			);
 			path = crapper_keeper_ios;
 			sourceTree = "<group>";
