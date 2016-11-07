@@ -23,5 +23,6 @@ extension Container {
     @NSManaged public var name: String?
     @NSManaged public var updatedAt: NSDate?
     @NSManaged public var user: User?
+    @NSManaged public var userId: String?
 
 }

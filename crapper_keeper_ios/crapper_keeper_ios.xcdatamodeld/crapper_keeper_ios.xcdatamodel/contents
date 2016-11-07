@@ -15,6 +15,11 @@
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="user_id"/>
+            </userInfo>
+        </attribute>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="containers" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
@@ -24,10 +29,10 @@
             </userInfo>
         </attribute>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="containers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Container" inverseName="user" inverseEntity="Container" syncable="YES"/>
+        <relationship name="containers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Container" inverseName="user" inverseEntity="Container" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Container" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Container" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="User" positionX="-63" positionY="27" width="128" height="90"/>
     </elements>
 </model>

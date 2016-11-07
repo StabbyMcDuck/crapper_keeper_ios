@@ -27,6 +27,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let request: NSFetchRequest<Container> = Container.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         self.containers = try! dataStack!.mainContext.fetch(request)
+        
+        for container in containers {
+            print("Container (id: \(container.id), userId: \(container.userId), user: \(container.user))")
+        }
+        
         self.tableView.reloadData()
      }
     
@@ -39,12 +44,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             for user in users {
               print("User (id: \(user.id), name: \(user.name))")
             }
+            
+            self.networking.fetchContainers(user: user, password: password) { _ in
+                self.fetchCurrentObjects()
+                self.refreshControl?.endRefreshing()
+            }
         }
         
-        self.networking.fetchContainers(user: user, password: password) { _ in
-            self.fetchCurrentObjects()
-            self.refreshControl?.endRefreshing()
-        }
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
