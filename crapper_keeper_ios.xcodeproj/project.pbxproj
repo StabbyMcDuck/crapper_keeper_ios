@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831DD7241DD00E7400C85403 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831DD7221DD00E7400C85403 /* User.swift */; };
+		831DD7251DD00E7400C85403 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831DD7231DD00E7400C85403 /* User+CoreDataProperties.swift */; };
 		831FB5531DCE39A400EFCAAC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */; };
 		837FD4261DCE899800D8B569 /* ContainerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FD4251DCE899800D8B569 /* ContainerDetailViewController.swift */; };
 		837FD4281DCE8E4100D8B569 /* ContainerTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FD4271DCE8E4100D8B569 /* ContainerTabBarController.swift */; };
@@ -28,6 +30,8 @@
 		232E9EE9C204C9C110500849 /* Pods-crapper_keeper_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crapper_keeper_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-crapper_keeper_ios/Pods-crapper_keeper_ios.release.xcconfig"; sourceTree = "<group>"; };
 		3AD5BDAA8F5325DD9E66C4E1 /* Pods_crapper_keeper_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crapper_keeper_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4415B433DEB942ED567BD9E0 /* Pods-crapper_keeper_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crapper_keeper_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-crapper_keeper_ios/Pods-crapper_keeper_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		831DD7221DD00E7400C85403 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		831DD7231DD00E7400C85403 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		837FD4251DCE899800D8B569 /* ContainerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerDetailViewController.swift; sourceTree = "<group>"; };
 		837FD4271DCE8E4100D8B569 /* ContainerTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTabBarController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		83E6B5691DCD1190006A3A26 /* crapper_keeper_ios */ = {
 			isa = PBXGroup;
 			children = (
+				831DD7221DD00E7400C85403 /* User.swift */,
+				831DD7231DD00E7400C85403 /* User+CoreDataProperties.swift */,
 				83C36CDC1DCFA3180085B2FD /* tools.jpeg */,
 				83E6B56A1DCD1190006A3A26 /* AppDelegate.swift */,
 				83E6B56C1DCD1190006A3A26 /* ViewController.swift */,
@@ -242,12 +248,14 @@
 			files = (
 				83B9A18D1DCEB0F900E93B85 /* NewContainerViewController.swift in Sources */,
 				83C36CE31DCFD1AD0085B2FD /* Networking.swift in Sources */,
+				831DD7251DD00E7400C85403 /* User+CoreDataProperties.swift in Sources */,
 				83CAE1051DCD297100A3205E /* Container+CoreDataProperties.swift in Sources */,
 				83E6B5731DCD1190006A3A26 /* crapper_keeper_ios.xcdatamodeld in Sources */,
 				831FB5531DCE39A400EFCAAC /* ItemDetailViewController.swift in Sources */,
 				837FD4281DCE8E4100D8B569 /* ContainerTabBarController.swift in Sources */,
 				83E6B56D1DCD1190006A3A26 /* ViewController.swift in Sources */,
 				83E6B56B1DCD1190006A3A26 /* AppDelegate.swift in Sources */,
+				831DD7241DD00E7400C85403 /* User.swift in Sources */,
 				837FD4261DCE899800D8B569 /* ContainerDetailViewController.swift in Sources */,
 				83CAE1041DCD297100A3205E /* Container.swift in Sources */,
 			);

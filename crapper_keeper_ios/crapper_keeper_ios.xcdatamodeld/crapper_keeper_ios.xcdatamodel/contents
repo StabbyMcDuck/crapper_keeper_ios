@@ -16,7 +16,16 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="id" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="hyper.isPrimaryKey" value="true"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Container" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="User" positionX="-63" positionY="27" width="128" height="75"/>
     </elements>
 </model>

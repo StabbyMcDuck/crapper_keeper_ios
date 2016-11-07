@@ -11,8 +11,8 @@ import CoreData
 import DATAStack
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let user = "FILL-ME-IN"
-    let password = "FILL-ME-IN"
+    let user = "1d4e3c41-d348-414f-bfa4-a681e9d0a2db"
+    let password = "d7b17c5f-0b83-4a4f-8027-f6106064dfc7"
     
     /*@available(iOS 2.0, *)*/
     @IBOutlet weak var tableView: UITableView!
@@ -24,13 +24,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var selectedContainer : Container? = nil
     
     func fetchCurrentObjects() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Container")
+        let request: NSFetchRequest<Container> = Container.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        self.containers = (try! dataStack!.mainContext.fetch(request)) as! [Container]
+        self.containers = try! dataStack!.mainContext.fetch(request)
         self.tableView.reloadData()
      }
     
     func fetchNewData(user: String, password: String) {
+        self.networking.fetchUsers(user: user, password: password) { _ in
+            let request: NSFetchRequest<User> = User.fetchRequest()
+            request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+            let users = try! self.dataStack!.mainContext.fetch(request)
+            
+            for user in users {
+              print("User (id: \(user.id), name: \(user.name))")
+            }
+        }
+        
         self.networking.fetchContainers(user: user, password: password) { _ in
             self.fetchCurrentObjects()
             self.refreshControl?.endRefreshing()

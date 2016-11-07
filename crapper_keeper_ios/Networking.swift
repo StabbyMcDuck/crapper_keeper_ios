@@ -54,4 +54,8 @@ class Networking: NSObject {
     func fetchContainers(user: String, password: String, _ completion: @escaping (NSError?) -> Void) {
         fetch(inEntityNamed: "Container", url: containersURL, user: user, password: password, completion)
     }
+    
+    func fetchUsers(user: String, password: String, _ completion: @escaping (NSError?) -> Void) {
+        fetch(inEntityNamed: "User", url: usersURL, user: user, password: password, completion)
+    }
 }
