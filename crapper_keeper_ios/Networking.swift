@@ -43,7 +43,6 @@ class Networking: NSObject {
                     case .failure(let error):
                         print(error)
                         
-                        
                     }
                 } else if (statusCode! == 401) {
                     print("Authentication error")
@@ -72,10 +71,12 @@ class Networking: NSObject {
                     switch response.result {
                         case .success(let json):
                             let change = json as! [String: Any]
-                        
-                            Sync.changes([change], inEntityNamed: "Container", dataStack: self.dataStack, operations: [.Insert]) { error in
+                            print("Change = \(change)")
+                            
+                            Sync.changes([change], inEntityNamed: "Container", dataStack: self.dataStack, operations: [.Insert, .Update]) { error in
+                                print("Error syncing create's change: \(error)")
                                 completion(error)
-                        }
+                            }
                         
                         case .failure(let error):
                             print(error)

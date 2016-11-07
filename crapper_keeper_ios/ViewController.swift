@@ -95,23 +95,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let request: NSFetchRequest<Container> = Container.fetchRequest()
-        
-        let results = try! context.fetch(request)
-        /*var results : [AnyObject]?
-         
-         do {
-         results = try context.executeFetchRequest(request)
-         } catch _ {
-         results = nil
-         } */
-        
-        if (!results.isEmpty){
-            self.containers = results
-        }
-        
-        self.tableView.reloadData()
+        fetchCurrentObjects()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
