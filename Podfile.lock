@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.0.1)
   - DATAStack (6.1.2)
+  - KeychainSwift (7.0.0)
   - Sync (2.3.4):
     - DATAStack (~> 6.1.2)
     - SYNCPropertyMapper (~> 5.1.2)
@@ -8,14 +9,16 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - KeychainSwift (~> 7.0)
   - Sync (~> 2)
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   DATAStack: a45fc144e15193f1b22c26b507cc46655ce96a71
+  KeychainSwift: b6947435dd78cc442c64a84ae648dd0e871cf448
   Sync: b946c2ab9c51153f075bcaec828215d071ddf6db
   SYNCPropertyMapper: e4cf0f851aa3a1307a42985ab8600787b3382427
 
-PODFILE CHECKSUM: 6335194dabaeea7da18753909e31beb2743eeedb
+PODFILE CHECKSUM: 7199d0e993783940a30f4ed54b4b5b6a72e6a2a5
 
 COCOAPODS: 1.1.1

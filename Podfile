@@ -14,5 +14,6 @@ target 'crapper_keeper_ios' do
   # pod 'FacebookLogin'
 
   pod 'Alamofire', '~> 4.0'
+  pod 'KeychainSwift', '~> 7.0'
   pod 'Sync', '~> 2'
 end

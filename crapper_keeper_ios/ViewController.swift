@@ -6,13 +6,12 @@
 //  Copyright © 2016 Regina Imhoff. All rights reserved.
 //
 
-import UIKit
 import CoreData
 import DATAStack
+import KeychainSwift
+import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let user = "1d4e3c41-d348-414f-bfa4-a681e9d0a2db"
-    let password = "d7b17c5f-0b83-4a4f-8027-f6106064dfc7"
     
     /*@available(iOS 2.0, *)*/
     @IBOutlet weak var tableView: UITableView!
@@ -52,6 +51,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
     }
+    
+    func refresh() {
+        print("Refreshing")
+        let keychain = KeychainSwift()
+        let uid: String? = keychain.get("uid")
+        let oauthToken: String? = keychain.get("oauthToken")
+        
+        print("uid = \(uid)")
+        print("oauthToken = \(oauthToken)")
+        
+        if (uid != nil && oauthToken != nil) {
+            self.refreshControl = UIRefreshControl()
+            self.refreshControl?.addTarget(self, action: #selector(ViewController.fetchNewData), for: .valueChanged)
+            
+            self.fetchCurrentObjects()
+            self.fetchNewData(user: uid!, password: oauthToken!)
+        } else {
+            self.performSegue(withIdentifier: "loginSegue", sender: self)
+        }
+    }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.containers.count
@@ -81,11 +100,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: #selector(ViewController.fetchNewData), for: .valueChanged)
-        
-        self.fetchCurrentObjects()
-        self.fetchNewData(user: user, password: password)
+        refresh()        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,6 +132,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if segue.destination is ContainerTabBarController {
           let containerTabBarController = segue.destination as! ContainerTabBarController
            containerTabBarController.container = self.selectedContainer
+        } else if (segue.destination is LoginViewController) {
+            let loginViewController = segue.destination as! LoginViewController
+            loginViewController.containersController = self
         }
     }
 }

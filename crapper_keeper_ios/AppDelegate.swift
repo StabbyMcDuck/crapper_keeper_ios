@@ -14,6 +14,7 @@ import DATAStack
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var identity: Identity?
     
     lazy var dataStack: DATAStack = DATAStack(modelName: "crapper_keeper_ios")
 
