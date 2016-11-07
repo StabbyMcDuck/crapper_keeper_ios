@@ -12,8 +12,7 @@ import Sync
 
 class Networking: NSObject {
     let containersURL = "https://afternoon-springs-92546.herokuapp.com/api/v1/containers"
-    let user = "FILL-ME-IN-TO-TEST"
-    let password = "FILL-ME-IN-TO-TEST"
+    let usersURL = "https://afternoon-springs-92546.herokuapp.com/api/v1/users"
     
     let dataStack: DATAStack
     
@@ -21,8 +20,8 @@ class Networking: NSObject {
         self.dataStack = dataStack
     }
     
-    func fetchContainers(_ completion: @escaping (NSError?) -> Void) {
-        Alamofire.request(containersURL)
+    private func fetch(inEntityNamed: String, url: String, user: String, password: String, _ completion: @escaping (NSError?) -> Void) {
+        Alamofire.request(url)
             .authenticate(user: user, password: password)
             .responseData { response in
                 let statusCode = response.response?.statusCode
@@ -35,7 +34,7 @@ class Networking: NSObject {
                     case .success(let json):
                         let changes = json as! [[String: Any]]
                         
-                        Sync.changes(changes, inEntityNamed: "Container", dataStack: self.dataStack) { error in
+                        Sync.changes(changes, inEntityNamed: inEntityNamed, dataStack: self.dataStack) { error in
                             completion(error)
                         }
                         
@@ -49,6 +48,10 @@ class Networking: NSObject {
                 } else {
                     print("Error")
                 }
-            }
+        }
+    }
+    
+    func fetchContainers(user: String, password: String, _ completion: @escaping (NSError?) -> Void) {
+        fetch(inEntityNamed: "Container", url: containersURL, user: user, password: password, completion)
     }
 }

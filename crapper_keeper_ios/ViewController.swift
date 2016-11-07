@@ -11,6 +11,9 @@ import CoreData
 import DATAStack
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    let user = "FILL-ME-IN"
+    let password = "FILL-ME-IN"
+    
     /*@available(iOS 2.0, *)*/
     @IBOutlet weak var tableView: UITableView!
     
@@ -27,8 +30,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.reloadData()
      }
     
-    func fetchNewData() {
-        self.networking.fetchContainers { _ in
+    func fetchNewData(user: String, password: String) {
+        self.networking.fetchContainers(user: user, password: password) { _ in
             self.fetchCurrentObjects()
             self.refreshControl?.endRefreshing()
         }
@@ -66,7 +69,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.refreshControl?.addTarget(self, action: #selector(ViewController.fetchNewData), for: .valueChanged)
         
         self.fetchCurrentObjects()
-        self.fetchNewData()
+        self.fetchNewData(user: user, password: password)
     }
     
     override func viewWillAppear(_ animated: Bool) {
