@@ -21,7 +21,8 @@ class Networking: NSObject {
     }
     
     private func fetch(credentials: Credentials, inEntityNamed: String, url: String, _ completion: @escaping (NSError?) -> Void) {
-        Alamofire.request(url)
+        Alamofire
+            .request(url)
             .authenticate(user: credentials.user, password: credentials.password)
             .responseData { response in
                 let statusCode = response.response?.statusCode
@@ -46,7 +47,43 @@ class Networking: NSObject {
                 } else if (statusCode! == 401) {
                     print("Authentication error")
                 } else {
-                    print("Error")
+                    print("Error (HTTP Status Code \(statusCode)")
+                }
+        }
+    }
+    
+    func createContainer(_ container: Container, credentials: Credentials, _ completion: @escaping (NSError?) -> Void) {
+        let parameters: Parameters = [
+            "description": container.containerDescription ?? "",
+            "name": container.name!,
+            "user_id": container.userId!
+        ]
+        
+        Alamofire
+            .request(containersURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .authenticate(user: credentials.user, password: credentials.password)
+            .responseData { response in
+                let statusCode = response.response?.statusCode
+                
+                if statusCode == 301 {
+                    let jsonResult = Request.serializeResponseJSON(options: JSONSerialization.ReadingOptions.allowFragments, response: response.response, data: response.data, error: nil)
+                    
+                    switch jsonResult {
+                        
+                    case .success(let json):
+                        print("Created \(json)")
+                        
+                        // Don't call Sync.changes because only created is available
+                        completion(nil)
+                    case .failure(let error):
+                        print(error)
+                        
+                        
+                    }
+                } else if statusCode == 401 {
+                    print("Authentication error")
+                } else {
+                    print("Error (HTTP Status Code \(statusCode)")
                 }
         }
     }

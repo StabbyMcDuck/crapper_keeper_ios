@@ -53,7 +53,9 @@ class NewContainerViewController: UIViewController, UIImagePickerControllerDeleg
         
         container.name = containerNameTextField.text
         container.containerDescription = containerDescriptionTextField.text
-        container.image = UIImagePNGRepresentation(self.containerImageView!.image!) as NSData?
+        if let image = self.containerImageView!.image {
+            container.image = UIImagePNGRepresentation(image) as NSData?
+        }
         
         do {
             try context.save()
