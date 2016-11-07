@@ -18,6 +18,41 @@ extension User {
 
     @NSManaged public var id: String?
     @NSManaged public var name: String?
-    @NSManaged public var containers: Container?
+    @NSManaged public var containers: NSSet?
+    @NSManaged public var identities: NSSet?
+
+}
+
+// MARK: Generated accessors for containers
+extension User {
+
+    @objc(addContainersObject:)
+    @NSManaged public func addToContainers(_ value: Container)
+
+    @objc(removeContainersObject:)
+    @NSManaged public func removeFromContainers(_ value: Container)
+
+    @objc(addContainers:)
+    @NSManaged public func addToContainers(_ values: NSSet)
+
+    @objc(removeContainers:)
+    @NSManaged public func removeFromContainers(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for identities
+extension User {
+
+    @objc(addIdentitiesObject:)
+    @NSManaged public func addToIdentities(_ value: Identity)
+
+    @objc(removeIdentitiesObject:)
+    @NSManaged public func removeFromIdentities(_ value: Identity)
+
+    @objc(addIdentities:)
+    @NSManaged public func addToIdentities(_ values: NSSet)
+
+    @objc(removeIdentities:)
+    @NSManaged public func removeFromIdentities(_ values: NSSet)
 
 }

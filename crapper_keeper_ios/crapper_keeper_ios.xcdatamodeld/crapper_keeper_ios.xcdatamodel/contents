@@ -22,6 +22,13 @@
         </attribute>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="containers" inverseEntity="User" syncable="YES"/>
     </entity>
+    <entity name="Identity" representedClassName="Identity" syncable="YES">
+        <attribute name="oathTokenExpiresAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="oauthToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="provider" attributeType="String" syncable="YES"/>
+        <attribute name="uid" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="identities" inverseEntity="User" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="id" attributeType="String" syncable="YES">
             <userInfo>
@@ -30,9 +37,11 @@
         </attribute>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="containers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Container" inverseName="user" inverseEntity="Container" syncable="YES"/>
+        <relationship name="identities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Identity" inverseName="user" inverseEntity="Identity" syncable="YES"/>
     </entity>
     <elements>
         <element name="Container" positionX="-63" positionY="-18" width="128" height="165"/>
-        <element name="User" positionX="-63" positionY="27" width="128" height="90"/>
+        <element name="User" positionX="-63" positionY="27" width="128" height="105"/>
+        <element name="Identity" positionX="-54" positionY="54" width="128" height="120"/>
     </elements>
 </model>
