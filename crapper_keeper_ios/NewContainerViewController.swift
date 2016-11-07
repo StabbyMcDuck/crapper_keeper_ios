@@ -11,6 +11,9 @@ import CoreData
 
 class NewContainerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    var networking: Networking!
+    var user: User!
+    
     @IBOutlet weak var containerDescriptionTextField: UITextView!
     
     @IBOutlet weak var containerNameTextField: UITextField!
@@ -53,17 +56,24 @@ class NewContainerViewController: UIViewController, UIImagePickerControllerDeleg
         
         container.name = containerNameTextField.text
         container.containerDescription = containerDescriptionTextField.text
+        
         if let image = self.containerImageView!.image {
             container.image = UIImagePNGRepresentation(image) as NSData?
         }
         
-        do {
-            try context.save()
-        } catch _ {
-            
+        container.userId = user.id
+        
+        networking.createContainer(container, credentials: Credentials.get()!) { error in
+            if error != nil {
+                print("Error saving credential: \(error)")
+            } else {
+                print("Credentials Saved")
+
+                self.dismiss(animated: true, completion: nil)
+            }
         }
         
-        self.dismiss(animated: true, completion: nil)
+        
     }
 
 }

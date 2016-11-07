@@ -21,6 +21,7 @@ class Networking: NSObject {
     }
     
     private func fetch(credentials: Credentials, inEntityNamed: String, url: String, _ completion: @escaping (NSError?) -> Void) {
+        print("Authentication: '\(credentials.user)' '\(credentials.password)'")
         Alamofire
             .request(url)
             .authenticate(user: credentials.user, password: credentials.password)
@@ -65,16 +66,17 @@ class Networking: NSObject {
             .responseData { response in
                 let statusCode = response.response?.statusCode
                 
-                if statusCode == 301 {
+                if statusCode == 201 {
                     let jsonResult = Request.serializeResponseJSON(options: JSONSerialization.ReadingOptions.allowFragments, response: response.response, data: response.data, error: nil)
                     
                     switch jsonResult {
                         
                     case .success(let json):
-                        print("Created \(json)")
+                        let change = json as! [String: Any]
                         
-                        // Don't call Sync.changes because only created is available
-                        completion(nil)
+                        Sync.changes([change], inEntityNamed: "Container", dataStack: self.dataStack, operations: [.Insert]) { error in
+                            completion(error)
+                        }
                     case .failure(let error):
                         print(error)
                         

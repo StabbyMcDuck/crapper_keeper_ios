@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     lazy var networking: Networking = Networking(dataStack: self.dataStack!)
     var refreshControl: UIRefreshControl? = nil
     var selectedContainer : Container? = nil
+    var user: User? = nil
     
     func fetchCurrentObjects() {
         let request: NSFetchRequest<Container> = Container.fetchRequest()
@@ -38,6 +39,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.networking.fetchUsers(credentials: credentials) { _ in
             let request: NSFetchRequest<User> = User.fetchRequest()
             request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+            
+            let users = try! self.dataStack!.mainContext.fetch(request)
+            
+            if users.count >= 1 {
+                self.user = users[0]
+            }
+            
             
             self.networking.fetchContainers(credentials: credentials) { _ in
                 self.fetchCurrentObjects()
@@ -127,6 +135,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let loginViewController = segue.destination as! LoginViewController
             loginViewController.containersController = self
+        } else if (segue.destination is NewContainerViewController) {
+            let newContainerViewController = segue.destination as! NewContainerViewController
+            newContainerViewController.networking = networking
+            newContainerViewController.user = user
         }
     }
 }
