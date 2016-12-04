@@ -9,6 +9,8 @@
 import CoreData
 import KeychainSwift
 import UIKit
+import FacebookLogin
+
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var uid: UITextField!
@@ -23,9 +25,18 @@ class LoginViewController: UIViewController {
         }
     }
 
+    //override func viewDidLoad() {
+        //super.viewDidLoad()
+        
+        
+        
     override func viewDidLoad() {
-        super.viewDidLoad()
+        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        loginButton.center = view.center
+            
+        view.addSubview(loginButton)
+    }
         
         // Do any additional setup after loading the view.
-    }
+    
 }
