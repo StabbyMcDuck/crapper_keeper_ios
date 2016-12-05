@@ -8,6 +8,7 @@
 
 import CoreData
 import DATAStack
+import FacebookLogin
 import KeychainSwift
 import UIKit
 
@@ -109,6 +110,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
            containerTabBarController.container = self.selectedContainer
         } else if (segue.destination is LoginViewController) {
             if segue.identifier == "logoutSegue" {
+                LoginManager().logOut()
+                
                 Credentials.delete()
                 
                 try! dataStack!.drop()

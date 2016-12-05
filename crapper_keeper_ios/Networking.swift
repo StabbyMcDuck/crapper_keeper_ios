@@ -25,8 +25,41 @@ class Networking: NSObject {
         self.dataStack = dataStack
     }
     
+    static func facebookLogin(_ accessToken: FacebookCore.AccessToken, loggedIn: @escaping (() -> Void)) {
+        facebookLogin(
+            accessToken,
+            responseData: { responseData in
+                let statusCode = responseData.response?.statusCode
+                
+                if 200 <= statusCode! && statusCode! <= 299 {
+                    let jsonResult = Request.serializeResponseJSON(
+                        options: JSONSerialization.ReadingOptions.allowFragments,
+                        response: responseData.response,
+                        data: responseData.data,
+                        error: nil
+                    )
+                    
+                    switch jsonResult {
+                    case .failure(let error):
+                        print("error = \(error)")
+                    case .success(let json):
+                        print("json = \(json)")
+                        let identity = json as! [String: Any]
+                        let user = identity["uid"] as! String
+                        let password = identity["oauth_token"] as! String
+                        Credentials.set(user: user, password: password)
+                        
+                        loggedIn()
+                    }
+                } else {
+                    print("Facebook login failed (status code \(statusCode))")
+                }
+            }
+        )
+    }
+    
     static func facebookLogin(_ accessToken: FacebookCore.AccessToken,
-                       _ completion: @escaping ((DataResponse<Data>) -> Void)) {
+                       responseData: @escaping ((DataResponse<Data>) -> Void)) {
         let parameters: Parameters = [
             "access_token": accessToken.authenticationToken,
             "provider": "facebook"
@@ -35,7 +68,7 @@ class Networking: NSObject {
         Alamofire
             .request(facebookAuthURL, method: .post, parameters: parameters)
             .responseData { response in
-                completion(response)
+                responseData(response)
         }
     }
     

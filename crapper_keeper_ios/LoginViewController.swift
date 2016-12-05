@@ -21,7 +21,11 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     @IBAction func login(_ sender: Any) {
         Credentials.set(user: uid.text!, password: oauthToken.text!)
         
-        self.dismiss(animated: true) {            
+        loggedIn()
+    }
+    
+    private func loggedIn() {
+        self.dismiss(animated: true) {
             self.containersController.refresh()
         }
     }
@@ -33,11 +37,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         case .failed(let error):
             print("Facebook login failed (\(error))")
         case .success(_, _, let accessToken):
-            Networking.facebookLogin(accessToken) { responseData in
-                let statusCode = responseData.response?.statusCode
-                
-                print("statusCode = \(statusCode)")
-            }
+            Networking.facebookLogin(accessToken, loggedIn: loggedIn)
         }
     }
     
@@ -46,34 +46,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     
     override func viewDidLoad() {
         if let accessToken = FacebookCore.AccessToken.current {
-            Networking.facebookLogin(accessToken) { responseData in
-                let statusCode = responseData.response?.statusCode
-                
-                if 200 <= statusCode! && statusCode! <= 299 {
-                    print("data = \(String(data: responseData.data!, encoding: String.Encoding.utf8))")
-                    
-                    let jsonResult = Request.serializeResponseJSON(
-                        options: JSONSerialization.ReadingOptions.allowFragments,
-                        response: responseData.response,
-                        data: responseData.data,
-                        error: nil
-                    )
-                    
-                    switch jsonResult {
-                    case .failure(let error):
-                        print("error = \(error)")
-                    case .success(let json):
-                        let identity = json as! [String: Any]
-                        Credentials.set(user: identity["uid"] as! String, password: identity["oauth_token"] as! String)
-                        
-                        self.dismiss(animated: true) {
-                            self.containersController.refresh()
-                        }
-                    }
-                } else {
-                    print("Facebook login failed (status code \(statusCode))")
-                }
-            }
+            Networking.facebookLogin(accessToken, loggedIn: loggedIn)
         } else {
             let loginButton = LoginButton(readPermissions: [ .publicProfile ])
             loginButton.center.x = view.center.x
