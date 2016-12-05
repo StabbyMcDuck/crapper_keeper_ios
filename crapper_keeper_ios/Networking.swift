@@ -8,16 +8,68 @@
 
 import Alamofire
 import DATAStack
+import FacebookCore
 import Sync
 
+//let hostURL = "http://192.168.0.135"
+let hostURL = "https://afternoon-springs-92546.herokuapp.com"
+let containersURL = "\(hostURL)/api/v1/containers"
+let usersURL = "\(hostURL)/api/v1/users"
+let facebookAuthURL = "\(hostURL)/api/v1/identities"
+
 class Networking: NSObject {
-    let containersURL = "https://afternoon-springs-92546.herokuapp.com/api/v1/containers"
-    let usersURL = "https://afternoon-springs-92546.herokuapp.com/api/v1/users"
     
     let dataStack: DATAStack
     
     required init(dataStack: DATAStack) {
         self.dataStack = dataStack
+    }
+    
+    static func facebookLogin(_ accessToken: FacebookCore.AccessToken, loggedIn: @escaping (() -> Void)) {
+        facebookLogin(
+            accessToken,
+            responseData: { responseData in
+                let statusCode = responseData.response?.statusCode
+                
+                if 200 <= statusCode! && statusCode! <= 299 {
+                    let jsonResult = Request.serializeResponseJSON(
+                        options: JSONSerialization.ReadingOptions.allowFragments,
+                        response: responseData.response,
+                        data: responseData.data,
+                        error: nil
+                    )
+                    
+                    switch jsonResult {
+                    case .failure(let error):
+                        print("error = \(error)")
+                    case .success(let json):
+                        print("json = \(json)")
+                        let identity = json as! [String: Any]
+                        let user = identity["uid"] as! String
+                        let password = identity["oauth_token"] as! String
+                        Credentials.set(user: user, password: password)
+                        
+                        loggedIn()
+                    }
+                } else {
+                    print("Facebook login failed (status code \(statusCode))")
+                }
+            }
+        )
+    }
+    
+    static func facebookLogin(_ accessToken: FacebookCore.AccessToken,
+                       responseData: @escaping ((DataResponse<Data>) -> Void)) {
+        let parameters: Parameters = [
+            "access_token": accessToken.authenticationToken,
+            "provider": "facebook"
+        ]
+        
+        Alamofire
+            .request(facebookAuthURL, method: .post, parameters: parameters)
+            .responseData { response in
+                responseData(response)
+        }
     }
     
     private func fetch(credentials: Credentials, inEntityNamed: String, url: String, _ completion: @escaping (NSError?) -> Void) {

@@ -9,8 +9,11 @@
 import CoreData
 import KeychainSwift
 import UIKit
+import FacebookCore
+import FacebookLogin
+import Alamofire
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, LoginButtonDelegate {
     @IBOutlet weak var uid: UITextField!
     @IBOutlet weak var oauthToken: UITextField!
     var containersController: ViewController!
@@ -18,14 +21,39 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         Credentials.set(user: uid.text!, password: oauthToken.text!)
         
-        self.dismiss(animated: true) {            
+        loggedIn()
+    }
+    
+    private func loggedIn() {
+        self.dismiss(animated: true) {
             self.containersController.refresh()
         }
     }
-
+    
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        switch result {
+        case .cancelled:
+            print("Facebook login cancelled")
+        case .failed(let error):
+            print("Facebook login failed (\(error))")
+        case .success(_, _, let accessToken):
+            Networking.facebookLogin(accessToken, loggedIn: loggedIn)
+        }
+    }
+    
+    // A different screen is used for logout
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {}
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        if let accessToken = FacebookCore.AccessToken.current {
+            Networking.facebookLogin(accessToken, loggedIn: loggedIn)
+        } else {
+            let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+            loginButton.center.x = view.center.x
+            loginButton.center.y = view.center.y + 40
+            loginButton.delegate = self
         
-        // Do any additional setup after loading the view.
+            view.addSubview(loginButton)
+        }
     }
 }

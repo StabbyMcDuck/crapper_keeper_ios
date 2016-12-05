@@ -11,7 +11,7 @@ target 'crapper_keeper_ios' do
   use_frameworks!
  
   # pod 'FacebookCore'
-  # pod 'FacebookLogin'
+  pod 'FacebookLogin'
 
   pod 'Alamofire', '~> 4.0'
   pod 'KeychainSwift', '~> 7.0'
