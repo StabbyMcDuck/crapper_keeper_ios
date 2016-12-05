@@ -10,6 +10,7 @@
 		831DD7241DD00E7400C85403 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831DD7221DD00E7400C85403 /* User.swift */; };
 		831DD7251DD00E7400C85403 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831DD7231DD00E7400C85403 /* User+CoreDataProperties.swift */; };
 		831FB5531DCE39A400EFCAAC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */; };
+		83373E9B1DF53A1700D0AE0A /* tools.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 83373E9A1DF53A1700D0AE0A /* tools.jpeg */; };
 		833B768F1DD0403A0021C965 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B768E1DD0403A0021C965 /* Credentials.swift */; };
 		836C20D41DD01F59005AA634 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C20D11DD01F59005AA634 /* Identity.swift */; };
 		836C20D51DD01F5A005AA634 /* Identity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C20D21DD01F59005AA634 /* Identity+CoreDataProperties.swift */; };
@@ -17,7 +18,6 @@
 		837FD4261DCE899800D8B569 /* ContainerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FD4251DCE899800D8B569 /* ContainerDetailViewController.swift */; };
 		837FD4281DCE8E4100D8B569 /* ContainerTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FD4271DCE8E4100D8B569 /* ContainerTabBarController.swift */; };
 		83B9A18D1DCEB0F900E93B85 /* NewContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B9A18C1DCEB0F900E93B85 /* NewContainerViewController.swift */; };
-		83C36CDD1DCFA3180085B2FD /* tools.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 83C36CDC1DCFA3180085B2FD /* tools.jpeg */; };
 		83C36CE31DCFD1AD0085B2FD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C36CE21DCFD1AD0085B2FD /* Networking.swift */; };
 		83CAE1041DCD297100A3205E /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CAE1021DCD297100A3205E /* Container.swift */; };
 		83CAE1051DCD297100A3205E /* Container+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */; };
@@ -37,6 +37,7 @@
 		831DD7221DD00E7400C85403 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		831DD7231DD00E7400C85403 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		831FB5521DCE39A400EFCAAC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		83373E9A1DF53A1700D0AE0A /* tools.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tools.jpeg; sourceTree = "<group>"; };
 		833B768D1DD03C4D0021C965 /* crapper_keeper_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = crapper_keeper_ios.entitlements; sourceTree = "<group>"; };
 		833B768E1DD0403A0021C965 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		836C20D11DD01F59005AA634 /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		837FD4251DCE899800D8B569 /* ContainerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerDetailViewController.swift; sourceTree = "<group>"; };
 		837FD4271DCE8E4100D8B569 /* ContainerTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTabBarController.swift; sourceTree = "<group>"; };
 		83B9A18C1DCEB0F900E93B85 /* NewContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContainerViewController.swift; sourceTree = "<group>"; };
-		83C36CDC1DCFA3180085B2FD /* tools.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tools.jpeg; path = ../../../../Downloads/tools.jpeg; sourceTree = "<group>"; };
 		83C36CE21DCFD1AD0085B2FD /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		83CAE1021DCD297100A3205E /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -96,6 +96,7 @@
 				836C20D11DD01F59005AA634 /* Identity.swift */,
 				836C20D21DD01F59005AA634 /* Identity+CoreDataProperties.swift */,
 				83E6B56A1DCD1190006A3A26 /* AppDelegate.swift */,
+				83373E9A1DF53A1700D0AE0A /* tools.jpeg */,
 				83E6B5741DCD1190006A3A26 /* Assets.xcassets */,
 				83CAE1021DCD297100A3205E /* Container.swift */,
 				83CAE1031DCD297100A3205E /* Container+CoreDataProperties.swift */,
@@ -108,7 +109,6 @@
 				83E6B56E1DCD1190006A3A26 /* Main.storyboard */,
 				83C36CE21DCFD1AD0085B2FD /* Networking.swift */,
 				83B9A18C1DCEB0F900E93B85 /* NewContainerViewController.swift */,
-				83C36CDC1DCFA3180085B2FD /* tools.jpeg */,
 				831DD7221DD00E7400C85403 /* User.swift */,
 				831DD7231DD00E7400C85403 /* User+CoreDataProperties.swift */,
 				83E6B56C1DCD1190006A3A26 /* ViewController.swift */,
@@ -206,7 +206,7 @@
 				83E6B5781DCD1190006A3A26 /* LaunchScreen.storyboard in Resources */,
 				83E6B5751DCD1190006A3A26 /* Assets.xcassets in Resources */,
 				83E6B5701DCD1190006A3A26 /* Main.storyboard in Resources */,
-				83C36CDD1DCFA3180085B2FD /* tools.jpeg in Resources */,
+				83373E9B1DF53A1700D0AE0A /* tools.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
