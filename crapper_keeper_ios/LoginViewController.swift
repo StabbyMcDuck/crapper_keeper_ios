@@ -9,10 +9,11 @@
 import CoreData
 import KeychainSwift
 import UIKit
+import FacebookCore
 import FacebookLogin
+import Alamofire
 
-
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, LoginButtonDelegate {
     @IBOutlet weak var uid: UITextField!
     @IBOutlet weak var oauthToken: UITextField!
     var containersController: ViewController!
@@ -24,19 +25,62 @@ class LoginViewController: UIViewController {
             self.containersController.refresh()
         }
     }
-
-    //override func viewDidLoad() {
-        //super.viewDidLoad()
-        
-        
-        
-    override func viewDidLoad() {
-        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-        loginButton.center = view.center
-            
-        view.addSubview(loginButton)
-    }
-        
-        // Do any additional setup after loading the view.
     
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        switch result {
+        case .cancelled:
+            print("Facebook login cancelled")
+        case .failed(let error):
+            print("Facebook login failed (\(error))")
+        case .success(_, _, let accessToken):
+            Networking.facebookLogin(accessToken) { responseData in
+                let statusCode = responseData.response?.statusCode
+                
+                print("statusCode = \(statusCode)")
+            }
+        }
+    }
+    
+    // A different screen is used for logout
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {}
+    
+    override func viewDidLoad() {
+        if let accessToken = FacebookCore.AccessToken.current {
+            Networking.facebookLogin(accessToken) { responseData in
+                let statusCode = responseData.response?.statusCode
+                
+                if 200 <= statusCode! && statusCode! <= 299 {
+                    print("data = \(String(data: responseData.data!, encoding: String.Encoding.utf8))")
+                    
+                    let jsonResult = Request.serializeResponseJSON(
+                        options: JSONSerialization.ReadingOptions.allowFragments,
+                        response: responseData.response,
+                        data: responseData.data,
+                        error: nil
+                    )
+                    
+                    switch jsonResult {
+                    case .failure(let error):
+                        print("error = \(error)")
+                    case .success(let json):
+                        let identity = json as! [String: Any]
+                        Credentials.set(user: identity["uid"] as! String, password: identity["oauth_token"] as! String)
+                        
+                        self.dismiss(animated: true) {
+                            self.containersController.refresh()
+                        }
+                    }
+                } else {
+                    print("Facebook login failed (status code \(statusCode))")
+                }
+            }
+        } else {
+            let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+            loginButton.center.x = view.center.x
+            loginButton.center.y = view.center.y + 40
+            loginButton.delegate = self
+        
+            view.addSubview(loginButton)
+        }
+    }
 }

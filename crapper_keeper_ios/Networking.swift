@@ -8,16 +8,35 @@
 
 import Alamofire
 import DATAStack
+import FacebookCore
 import Sync
 
+//let hostURL = "http://192.168.0.135"
+let hostURL = "https://afternoon-springs-92546.herokuapp.com"
+let containersURL = "\(hostURL)/api/v1/containers"
+let usersURL = "\(hostURL)/api/v1/users"
+let facebookAuthURL = "\(hostURL)/api/v1/identities"
+
 class Networking: NSObject {
-    let containersURL = "https://afternoon-springs-92546.herokuapp.com/api/v1/containers"
-    let usersURL = "https://afternoon-springs-92546.herokuapp.com/api/v1/users"
     
     let dataStack: DATAStack
     
     required init(dataStack: DATAStack) {
         self.dataStack = dataStack
+    }
+    
+    static func facebookLogin(_ accessToken: FacebookCore.AccessToken,
+                       _ completion: @escaping ((DataResponse<Data>) -> Void)) {
+        let parameters: Parameters = [
+            "access_token": accessToken.authenticationToken,
+            "provider": "facebook"
+        ]
+        
+        Alamofire
+            .request(facebookAuthURL, method: .post, parameters: parameters)
+            .responseData { response in
+                completion(response)
+        }
     }
     
     private func fetch(credentials: Credentials, inEntityNamed: String, url: String, _ completion: @escaping (NSError?) -> Void) {
